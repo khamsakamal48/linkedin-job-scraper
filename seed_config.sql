@@ -37,21 +37,24 @@ INSERT INTO app_config (key, value) VALUES
 ('linkedin_searches', '[
     {
         "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
-        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "locations": ["Mumbai, Maharashtra, India", "Pune, Maharashtra, India", "Thiruvananthapuram, Kerala, India", "India"],
+        "geoId": "102713980",
         "remote": 1,
         "experience": 4,
         "jobType": "F"
     },
     {
         "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
-        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "locations": ["Mumbai, Maharashtra, India", "Pune, Maharashtra, India", "Thiruvananthapuram, Kerala, India", "India"],
+        "geoId": "102713980",
         "remote": 2,
         "experience": 4,
         "jobType": "F"
     },
     {
         "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
-        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "locations": ["Mumbai, Maharashtra, India", "Pune, Maharashtra, India", "Thiruvananthapuram, Kerala, India", "India"],
+        "geoId": "102713980",
         "remote": 3,
         "experience": 4,
         "jobType": "F"
