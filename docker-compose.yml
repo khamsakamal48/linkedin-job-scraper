@@ -15,13 +15,13 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - n8n-net
+      - n8n_n8n-net
 
 networks:
   # IMPORTANT: set this to the EXISTING docker network your n8n container is on,
   # so n8n can resolve http://linkedin-scraper:8000. Find it with:
   #   docker inspect -f '{{range $k,$v := .NetworkSettings.Networks}}{{$k}}{{end}}' <n8n_container>
   # Then put that name below and keep `external: true`.
-  n8n-net:
+  n8n_n8n-net:
     external: true
-    name: n8n_default
+    name: n8n_n8n-net

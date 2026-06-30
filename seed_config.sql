@@ -17,20 +17,45 @@ ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;
 --      jobType    -> f_JT: "F" full-time, "P" part-time, "C" contract,
 --                          "T" temporary, "I" internship
 --      geoId      -> LinkedIn numeric geoId (optional, more precise than text)
+-- INSERT INTO app_config (key, value) VALUES
+-- ('linkedin_searches', '[
+--   {
+--     "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
+--     "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+--     "remote": 1,
+--     "experience": 4,
+--     "jobType": "F"
+--   },
+--   {
+--     "keywords": "IT Head",
+--     "location": "India",
+--     "remote": 2
+--   }
+-- ]'::jsonb)
+-- ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;
 INSERT INTO app_config (key, value) VALUES
 ('linkedin_searches', '[
-  {
-    "keywords": ["data engineer", "analytics engineer"],
-    "locations": ["Bengaluru", "Pune", "Remote"],
-    "remote": 2,
-    "experience": 4,
-    "jobType": "F"
-  },
-  {
-    "keywords": "ML engineer",
-    "location": "India",
-    "remote": 2
-  }
+    {
+        "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
+        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "remote": 1,
+        "experience": 4,
+        "jobType": "F"
+    },
+    {
+        "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
+        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "remote": 2,
+        "experience": 4,
+        "jobType": "F"
+    },
+    {
+        "keywords": ["IT Head", "AI Automation", "IT Manager", "IT Director", "IT VP", "IT CIO", "IT CTO"],
+        "locations": ["Mumbai", "Pune", "Remote", "Trivandrum"],
+        "remote": 3,
+        "experience": 4,
+        "jobType": "F"
+    }
 ]'::jsonb)
 ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;
 
