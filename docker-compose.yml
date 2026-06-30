@@ -1,0 +1,27 @@
+services:
+  linkedin-scraper:
+    build: .
+    image: linkedin-job-scraper:latest
+    container_name: linkedin-scraper
+    restart: unless-stopped
+    environment:
+      # Anti-throttle / network knobs (all optional):
+      - MAX_PAGES=2
+      - REQUEST_TIMEOUT=20
+      # Uncomment to route through a proxy if the VPS IP gets 429/999'd:
+      # - HTTP_PROXY=http://user:pass@proxy-host:port
+    # Expose only for local testing; in prod n8n reaches it via the shared
+    # network at http://linkedin-scraper:8000 (no published port needed).
+    ports:
+      - "8000:8000"
+    networks:
+      - n8n-net
+
+networks:
+  # IMPORTANT: set this to the EXISTING docker network your n8n container is on,
+  # so n8n can resolve http://linkedin-scraper:8000. Find it with:
+  #   docker inspect -f '{{range $k,$v := .NetworkSettings.Networks}}{{$k}}{{end}}' <n8n_container>
+  # Then put that name below and keep `external: true`.
+  n8n-net:
+    external: true
+    name: n8n_default
